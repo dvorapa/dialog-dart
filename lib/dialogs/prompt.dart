@@ -3,20 +3,22 @@ library dialog.prompt;
 import "dart:html";
 import "../src/dialog_class.dart";
 
-String prompt(String message,[String default]){
+String prompt(String message,[String value]){
 Dialog promptDialog=new Dialog();
+SpanElement span=new SpanElement();
+span.text=message;
 InputElement input=new InputElement();
-input..value=default
+input..value=value
      ..select();
 ButtonElement cancel=new ButtonElement();
 cancel..text="Cancel"
       ..onClick.listen((_){
-      promptDialog.hideDialog();
+      promptDialog.closeDialog();
       return null;
       });
-promptDialog..content=message+input+cancel
+promptDialog..content=[span,input,cancel]
             ..showDialog()
-            ..okay.onClick.listen((){
+            ..okay.onClick.listen((_){
             return input.value;
             });
 }
