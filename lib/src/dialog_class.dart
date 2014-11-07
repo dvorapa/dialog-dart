@@ -13,7 +13,7 @@ dialog=new DialogElement();
 if((querySelectorAll("[href*=bootstrap.min.css]").length==0)&&(querySelectorAll("[href*=bootstrap.css]").length==0)){
 LinkElement link=new LinkElement();
 link..type="text/css"
-    ..href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css";
+    ..href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css";
 queryElement("Head").insertAdjacentElement("beforeEnd",link);
 }
 
