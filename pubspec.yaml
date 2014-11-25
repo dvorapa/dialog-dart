@@ -1,7 +1,7 @@
 name: dialog
-version: 0.1.0
-description: Modern alert, confirm and prompt dialog implementation
-author: Pavel Dvořák <dvorapa@seznam.cz>
+version: 0.1.0+1
+description: Modern alert, confirm and prompt dialog implementation. NOT WORKING YET
+author: Pavel Dvořák
 homepage: https://github.com/dvorapa/dialog-dart
 environment:
   sdk: ">=1.7.0 <2.0.0"
