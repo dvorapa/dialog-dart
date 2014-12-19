@@ -3,10 +3,10 @@ library dialog.alert;
 import "dart:html";
 import "../src/dialog_class.dart";
 
-void alert(String message){
-Dialog alertDialog=new Dialog();
-SpanElement span=new SpanElement();
-span.text=message;
-alertDialog..content=[span]
-           ..showDialog();
+void alert([String message=""]){
+Dialog alertDialog=new Dialog([new Text(message)],"Alert");
+alertDialog..showDialog()
+           ..modalBackdrop.onClick.first.then((_)=>alertDialog.closeDialog())
+           ..xButton.onClick.first.then((_)=>alertDialog.closeDialog())
+           ..okButton.onClick.first.then((_)=>alertDialog.closeDialog());
 }

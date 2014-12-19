@@ -1,77 +1,106 @@
 import "dart:html";
 
+
 class Dialog{
-DialogElement dialog;
-AnchorElement closeButton;
-ButtonElement okay;
-ElementList content;
 
-Dialog(){
+List<Node> content;
+String title;
+bool cancelable;
+String cancelName;
+String okName;
+DivElement dialog=new DivElement();
+DivElement modalBackdrop=new DivElement();
+ButtonElement xButton=new ButtonElement();
+ButtonElement cancelButton=new ButtonElement();
+ButtonElement okButton=new ButtonElement();
 
-dialog=new DialogElement();
 
-if((querySelectorAll("[href*=bootstrap.min.css]").length==0)&&(querySelectorAll("[href*=bootstrap.css]").length==0)){
-LinkElement link=new LinkElement();
-link..type="text/css"
-    ..href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css";
-queryElement("Head").insertAdjacentElement("beforeEnd",link);
+Dialog(this.content,this.title,[this.cancelable=false,this.cancelName="Cancel",this.okName="OK"]){
+
+if(querySelectorAll("[href*='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css']").isEmpty){
+LinkElement link=new LinkElement()
+..href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
+..rel="stylesheet"
+..type="text/css";
+document.querySelector("head").insertAdjacentElement("beforeEnd",link);
 }
 
-closeButton=new AnchorElement();
-closeButton..text="&times;"
-     ..onClick.listen((_){
-     this.closeDialog();
-     });
-closeButton.style..color="black"
-           ..float="right"
-           ..textDecoration="none";
 
-okay=new ButtonElement();
-okay..text="Okay"
-    ..onClick.listen((_){
-    this.closeDialog();
-    });
-okay.style..backgroundColor="blue"
-          ..border="0"
-          ..borderRadius="0,25em"
-          ..color="white;";
+dialog.classes.add("modal fade");
+modalBackdrop
+..classes.add("modal-backdrop fade");
+dialog.children.add(modalBackdrop);
+DivElement modalDialog=new DivElement()
+..classes.add("modal-dialog");
+dialog.children.add(modalDialog);
+DivElement modalContent=new DivElement()
+..classes.add("modal-content");
+modalDialog.children.add(modalContent);
 
-content..add(okay)
-       ..forEach((Element element){
-       element.style.zIndex="1060";
-       dialog.insertAdjacentElement("afterBegin",element);
-       });
 
-dialog.style..backgroundColor="white"
-            ..borderRadius="0.375em"
-            ..color="black"
-            ..display="none"
-            ..margin="auto"
-            ..position="fixed"
-            ..zIndex="1050"
-            ..top="0"
-            ..left="0"
-            ..bottom="0"
-            ..right="0";
+DivElement modalHeader=new DivElement()
+..classes.add("modal-header")
+..style.border="0";
+
+xButton
+..classes.add("close")
+..text=new String.fromCharCode(215);
+modalHeader.children.add(xButton);
+
+HeadingElement modalTitle=new HeadingElement.h4()
+..classes.add("modal-title")
+..text=title;
+modalHeader.children.add(modalTitle);
+
+modalContent.children.add(modalHeader);
+
+
+DivElement modalBody=new DivElement()
+..classes.add("modal-body")
+..nodes.addAll(content)
+..style.paddingBottom="0"
+..style.paddingTop="0";
+
+modalContent.children.add(modalBody);
+
+
+DivElement modalFooter=new DivElement()
+..classes.add("modal-footer")
+..style.border="0"
+..style.paddingTop="0";
+
+if(cancelable==true){
+cancelButton
+..classes.add("btn btn-default")
+..text=cancelName;
+modalFooter.children.add(cancelButton);
 }
 
-bool showDialog(){
-if(document.body.classes.contains("opennedDialog")){
-return false;
-}else{
-dialog.show();
+okButton
+..classes.add("btn btn-primary")
+..text=okName;
+modalFooter.children.add(okButton);
+
+modalContent.children.add(modalFooter);
+
+document.body.children.add(dialog);
+}
+
+
+void showDialog(){
+assert(!(document.body.classes.contains("opennedDialog")));
+dialog..classes.add("in")
+      ..style.display="block";
+modalBackdrop..classes.add("in")
+             ..style.height="100%";
 document.body.classes.add("opennedDialog");
-return true;
-}
 }
 
-bool closeDialog(){
-if(document.body.classes.contains("opennedDialog")){
-dialog.close("");
+
+void closeDialog(){
+assert(document.body.classes.contains("opennedDialog"));
+dialog.style.display="none";
+modalBackdrop.style.display="none";
 document.body.classes.remove("opennedDialog");
-return true;
-}else{
-return false;
-}
 }
 }
