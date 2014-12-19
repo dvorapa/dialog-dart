@@ -1,6 +1,6 @@
 # Dialog.dart
 
-Modern alert, confirm and prompt dialog implementation. NOT WORKING YET
+Modern alert, confirm and prompt dialog implementation. BUGGY
 
 ## Description
 

@@ -1,6 +1,6 @@
 name: dialog
-version: 0.2.0-dev
-description: Modern alert, confirm and prompt dialog implementation. NOT WORKING YET
+version: 0.2.0
+description: Modern alert, confirm and prompt dialog implementation. BUGGY
 author: Pavel Dvořák
 homepage: https://github.com/dvorapa/dialog-dart
 environment:
