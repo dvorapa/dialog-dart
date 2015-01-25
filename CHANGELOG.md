@@ -1,3 +1,9 @@
+## 0.3.0
+
+* Correctly formatted
+* Screenshots added to the description
+* Added some other Bootstrap styles
+
 ## 0.2.0
 
 * Reworked to work (but still buggy)

@@ -15,36 +15,38 @@ Usage is almost the same as set in the Dart's Window class and completely the sa
 Replaces default alert dialog.
 
 ```Dart
-querySelector("#alertButton").onClick.listen((_){
+querySelector("#alertButton").onClick.listen((_) {
   alert("Alerted?!");
 });
 ```
 
-![Image of alert]()
+![Image of alert](web/images/alert.png)
 
 ### confirm.dart
 
 Replaces default confirm dialog.
 
 ```Dart
-querySelector("#confirmButton").onClick.listen((_){
-  confirm("Confirmed?!");
+querySelector("#confirmButton").onClick.listen((_) {
+  var myConfirm = confirm("Confirmed?!");
+  alert(myConfirm.toString());
 });
 ```
 
-![Image of confirm]()
+![Image of confirm](web/images/confirm.png)
 
 ### prompt.dart
 
 Adds missing prompt dialog.
 
 ```Dart
-querySelector("#promptButton").onClick.listen((_){
-  prompt("Prompted?!","Yes!");
+querySelector("#promptButton").onClick.listen((_) {
+  var myPrompt = prompt("Prompted?!", "Yes!");
+  alert(myPrompt.toString());
 });
 ```
 
-![Image of prompt]()
+![Image of prompt](web/images/prompt.png)
 
 ### dialog.dart
 

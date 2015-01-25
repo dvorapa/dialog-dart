@@ -5,7 +5,7 @@
 <Meta Name="author" Content="Pavel Dvořák">
 <Meta Name="description" Content="Modern alert, confirm and prompt dialog implementation">
 <Meta Name="keywords" Content="dialog,dart,alert,confirm,prompt,package,dvorapa">
-<Meta Name="version" Content="0.2.0">
+<Meta Name="version" Content="0.3.0">
 <Link Type="text/css" Rel="stylesheet" Href="style.css">
 <Title>Dialog.dart</Title>
 </Head>
@@ -27,7 +27,7 @@ Usage is almost the same as set in the Dart's Window class and completely the sa
 Replaces default alert dialog.
 
 <Code><Pre>
-querySelector("#alertButton").onClick.listen((_){
+querySelector("#alertButton").onClick.listen((_) {
   alert("Alerted?!");
 });
 </Pre></Code>
@@ -39,8 +39,9 @@ querySelector("#alertButton").onClick.listen((_){
 Replaces default confirm dialog.
 
 <Code><Pre>
-querySelector("#confirmButton").onClick.listen((_){
-  confirm("Confirmed?!");
+querySelector("#confirmButton").onClick.listen((_) {
+  var myConfirm = confirm("Confirmed?!");
+  alert(myConfirm.toString());
 });
 </Pre></Code>
 
@@ -51,8 +52,9 @@ querySelector("#confirmButton").onClick.listen((_){
 Adds missing prompt dialog.
 
 <Code><Pre>
-querySelector("#promptButton").onClick.listen((_){
-  prompt("Prompted?!","Yes!");
+querySelector("#promptButton").onClick.listen((_) {
+  var myPrompt = prompt("Prompted?!", "Yes!");
+  alert(myPrompt.toString());
 });
 </Pre></Code>
 
