@@ -20,7 +20,7 @@ querySelector("#alertButton").onClick.listen((_) {
 });
 ```
 
-![Image of alert](web/images/alert.png)
+![Image of alert](alert.png)
 
 ### confirm.dart
 
@@ -33,7 +33,7 @@ querySelector("#confirmButton").onClick.listen((_) {
 });
 ```
 
-![Image of confirm](web/images/confirm.png)
+![Image of confirm](confirm.png)
 
 ### prompt.dart
 
@@ -46,7 +46,7 @@ querySelector("#promptButton").onClick.listen((_) {
 });
 ```
 
-![Image of prompt](web/images/prompt.png)
+![Image of prompt](prompt.png)
 
 ### dialog.dart
 
