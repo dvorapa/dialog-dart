@@ -1,5 +1,5 @@
 name: dialog
-version: 0.3.0
+version: 0.3.0+1
 description: Modern alert, confirm and prompt dialog implementation. BUGGY
 author: Pavel Dvořák
 homepage: https://github.com/dvorapa/dialog-dart
