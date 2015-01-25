@@ -20,7 +20,7 @@ querySelector("#alertButton").onClick.listen((_) {
 });
 ```
 
-![Image of alert](alert.png)
+![Image of alert](https://raw.githubusercontent.com/dvorapa/dialog-dart/master/alert.png)
 
 ### confirm.dart
 
@@ -33,7 +33,7 @@ querySelector("#confirmButton").onClick.listen((_) {
 });
 ```
 
-![Image of confirm](confirm.png)
+![Image of confirm](https://raw.githubusercontent.com/dvorapa/dialog-dart/master/confirm.png)
 
 ### prompt.dart
 
@@ -46,7 +46,7 @@ querySelector("#promptButton").onClick.listen((_) {
 });
 ```
 
-![Image of prompt](prompt.png)
+![Image of prompt](https://raw.githubusercontent.com/dvorapa/dialog-dart/master/prompt.png)
 
 ### dialog.dart
 
