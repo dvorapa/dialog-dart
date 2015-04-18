@@ -1,6 +1,6 @@
 # Dialog.dart
 
-Modern alert, confirm and prompt dialog implementation. BUGGY
+Modern alert, confirm and prompt dialog implementation
 
 ## Description
 
@@ -10,7 +10,11 @@ This package replaces default alert and confirm dialogs from Dart's Window class
 
 Usage is almost the same as set in the Dart's Window class and completely the same as described in the WHATWG HTML Standard. For each dialog there is just one file to import only the dialog you really need. There is also one file to import all three dialogs at once if you want to use them all.
 
-### alert.dart
+```Dart
+import "package:dialog/<file>";
+```
+
+### dialogs/alert.dart
 
 Replaces default alert dialog.
 
@@ -22,7 +26,7 @@ querySelector("#alertButton").onClick.listen((_) {
 
 ![Image of alert](https://raw.githubusercontent.com/dvorapa/dialog-dart/master/alert.png)
 
-### confirm.dart
+### dialogs/confirm.dart
 
 Replaces default confirm dialog.
 
@@ -35,7 +39,7 @@ querySelector("#confirmButton").onClick.listen((_) {
 
 ![Image of confirm](https://raw.githubusercontent.com/dvorapa/dialog-dart/master/confirm.png)
 
-### prompt.dart
+### dialogs/prompt.dart
 
 Adds missing prompt dialog.
 

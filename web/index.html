@@ -5,7 +5,7 @@
 <Meta Name="author" Content="Pavel Dvořák">
 <Meta Name="description" Content="Modern alert, confirm and prompt dialog implementation">
 <Meta Name="keywords" Content="dialog,dart,alert,confirm,prompt,package,dvorapa">
-<Meta Name="version" Content="0.3.0+2">
+<Meta Name="version" Content="0.4.0-dev">
 <Link Type="text/css" Rel="stylesheet" Href="style.css">
 <Title>Dialog.dart</Title>
 </Head>
@@ -22,7 +22,11 @@ This package replaces default alert and confirm dialogs from Dart's Window class
 
 Usage is almost the same as set in the Dart's Window class and completely the same as described in the WHATWG HTML Standard. For each dialog there is just one file to import only the dialog you really need. There is also one file to import all three dialogs at once if you want to use them all.
 
-<H3>alert.dart</H3>
+<Code><Pre>
+import "package:dialog/&lt;file&gt;";
+</Pre></Code>
+
+<H3>dialogs/alert.dart</H3>
 
 Replaces default alert dialog.
 
@@ -34,7 +38,7 @@ querySelector("#alertButton").onClick.listen((_) {
 
 <Button Id="alertButton">Alert me!</Button>
 
-<H3>confirm.dart</H3>
+<H3>dialogs/confirm.dart</H3>
 
 Replaces default confirm dialog.
 
@@ -47,7 +51,7 @@ querySelector("#confirmButton").onClick.listen((_) {
 
 <Button Id="confirmButton">Confirm me!</Button>
 
-<H3>prompt.dart</H3>
+<H3>dialogs/prompt.dart</H3>
 
 Adds missing prompt dialog.
 

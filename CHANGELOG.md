@@ -1,3 +1,8 @@
+## 0.4.0
+
+* Reworked to work completely using async/await
+* Resolved bugs
+
 ## 0.3.0
 
 * Correctly formatted
