@@ -4,6 +4,6 @@ description: Modern alert, confirm and prompt dialog implementation
 author: Pavel Dvořák
 homepage: https://github.com/dvorapa/dialog-dart
 environment:
-  sdk: ">=1.9.3 <2.0.0"
+  sdk: ">=1.10.0 <2.0.0"
 dependencies:
   browser: ">=0.10.0 <0.11.0"
