@@ -14,7 +14,9 @@ Usage is almost the same as set in the Dart's Window class and completely the sa
 import "package:dialog/<file>";
 ```
 
-### dialogs/alert.dart
+### Libraries to import in `<file>`:
+
+#### dialogs/alert.dart
 
 Replaces default alert dialog.
 
@@ -26,7 +28,7 @@ querySelector("#alertButton").onClick.listen((_) {
 
 ![Image of alert](https://raw.githubusercontent.com/dvorapa/dialog-dart/master/alert.png)
 
-### dialogs/confirm.dart
+#### dialogs/confirm.dart
 
 Replaces default confirm dialog.
 
@@ -39,7 +41,7 @@ querySelector("#confirmButton").onClick.listen((_) async {
 
 ![Image of confirm](https://raw.githubusercontent.com/dvorapa/dialog-dart/master/confirm.png)
 
-### dialogs/prompt.dart
+#### dialogs/prompt.dart
 
 Adds missing prompt dialog.
 
@@ -52,7 +54,7 @@ querySelector("#promptButton").onClick.listen((_) async {
 
 ![Image of prompt](https://raw.githubusercontent.com/dvorapa/dialog-dart/master/prompt.png)
 
-### dialog.dart
+#### dialog.dart
 
 Do you need to use them all at once? Try it by importing dialog.dart file.
 

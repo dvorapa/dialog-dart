@@ -5,7 +5,7 @@
 <Meta Name="author" Content="Pavel Dvořák">
 <Meta Name="description" Content="Modern alert, confirm and prompt dialog implementation">
 <Meta Name="keywords" Content="dialog,dart,alert,confirm,prompt,package,dvorapa">
-<Meta Name="version" Content="0.4.0">
+<Meta Name="version" Content="0.4.0+1">
 <Link Type="text/css" Rel="stylesheet" Href="style.css">
 <Title>Dialog.dart</Title>
 </Head>
@@ -26,7 +26,9 @@ Usage is almost the same as set in the Dart's Window class and completely the sa
 import "package:dialog/&lt;file&gt;";
 </Pre></Code>
 
-<H3>dialogs/alert.dart</H3>
+<H3>Libraries to import in <Code>&lt;file&gt;</Code>:</H3>
+
+<H4>dialogs/alert.dart</H4>
 
 Replaces default alert dialog.
 
@@ -38,7 +40,7 @@ querySelector("#alertButton").onClick.listen((_) {
 
 <Button Id="alertButton">Alert me!</Button>
 
-<H3>dialogs/confirm.dart</H3>
+<H4>dialogs/confirm.dart</H4>
 
 Replaces default confirm dialog.
 
@@ -51,7 +53,7 @@ querySelector("#confirmButton").onClick.listen((_) async {
 
 <Button Id="confirmButton">Confirm me!</Button>
 
-<H3>dialogs/prompt.dart</H3>
+<H4>dialogs/prompt.dart</H4>
 
 Adds missing prompt dialog.
 
@@ -64,7 +66,7 @@ querySelector("#promptButton").onClick.listen((_) async {
 
 <Button Id="promptButton">Prompt me!</Button>
 
-<H3>dialog.dart</H3>
+<H4>dialog.dart</H4>
 
 Do you need to use them all at once? Try it by importing dialog.dart file.
 
