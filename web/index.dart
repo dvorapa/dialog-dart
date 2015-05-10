@@ -5,12 +5,12 @@ main() {
   querySelector("#alertButton").onClick.listen((_) {
     alert("Alerted?!");
   });
-  querySelector("#confirmButton").onClick.listen((_) {
-    var myConfirm = confirm("Confirmed?!");
+  querySelector("#confirmButton").onClick.listen((_) async {
+    var myConfirm = await confirm("Confirmed?!");
     alert(myConfirm.toString());
   });
-  querySelector("#promptButton").onClick.listen((_) {
-    var myPrompt = prompt("Prompted?!", "Yes!");
+  querySelector("#promptButton").onClick.listen((_) async {
+    var myPrompt = await prompt("Prompted?!", "Yes!");
     alert(myPrompt.toString());
   });
 }

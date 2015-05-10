@@ -1,13 +1,13 @@
 ## 0.4.0
 
-* Reworked to work completely using async/await
-* Resolved bugs
+* Resolved bugged order using dart:async
+* Added onKeyDown listeners for Enter or ESC
 
 ## 0.3.0
 
-* Correctly formatted
-* Screenshots added to the description
-* Added some other Bootstrap styles
+* Formatted by dartfmt
+* Added screenshots to the description
+* Added a few additional Bootstrap styles
 
 ## 0.2.0
 

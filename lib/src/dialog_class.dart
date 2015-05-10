@@ -15,20 +15,20 @@ class Dialog {
   Dialog(this.content, this.title, [this.cancelable = false,
       this.cancelName = "Cancel", this.okName = "OK"]) {
     if (querySelectorAll(
-        "[href*='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css']").isEmpty) {
+        "[href*='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css']").isEmpty) {
       LinkElement link = new LinkElement()
         ..href =
-        "//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+        "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
         ..rel = "stylesheet"
         ..type = "text/css";
       document.querySelector("head").insertAdjacentElement("beforeEnd", link);
     }
 
-    dialog.classes.add("modal fade");
-    modalBackdrop..classes.add("modal-backdrop fade");
+    dialog.classes.addAll(["modal", "fade"]);
+    modalBackdrop.classes.addAll(["modal-backdrop", "fade"]);
     dialog.children.add(modalBackdrop);
     DivElement modalDialog = new DivElement()
-      ..classes.add("modal-dialog modal-sm");
+      ..classes.addAll(["modal-dialog", "modal-sm"]);
     dialog.children.add(modalDialog);
     DivElement modalContent = new DivElement()..classes.add("modal-content");
     modalDialog.children.add(modalContent);
@@ -63,13 +63,15 @@ class Dialog {
 
     if (cancelable == true) {
       cancelButton
-        ..classes.add("btn btn-default")
+        ..classes.addAll(["btn", "btn-default"])
+        ..tabIndex = 1
         ..text = cancelName;
       modalFooter.children.add(cancelButton);
     }
 
     okButton
-      ..classes.add("btn btn-primary")
+      ..classes.addAll(["btn", "btn-primary"])
+      ..tabIndex = 0
       ..text = okName;
     modalFooter.children.add(okButton);
 
@@ -79,21 +81,21 @@ class Dialog {
   }
 
   void showDialog() {
-    if (!(document.body.classes.contains("opennedDialog"))) {
-      dialog
-        ..classes.add("in")
-        ..style.display = "block";
+    if (document.body.classes.contains("opennedDialog") == false) {
       modalBackdrop
         ..classes.add("in")
         ..style.height = "100%";
+      dialog
+        ..classes.add("in")
+        ..style.display = "block";
       document.body.classes.add("opennedDialog");
     }
   }
 
   void closeDialog() {
-    if (document.body.classes.contains("opennedDialog")) {
-      dialog.style.display = "none";
+    if (document.body.classes.contains("opennedDialog") == true) {
       modalBackdrop.style.display = "none";
+      dialog.style.display = "none";
       document.body.classes.remove("opennedDialog");
     }
   }
