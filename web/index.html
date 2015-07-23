@@ -5,7 +5,7 @@
 <Meta Name="author" Content="Pavel Dvořák">
 <Meta Name="description" Content="Modern alert, confirm and prompt dialog implementation">
 <Meta Name="keywords" Content="dialog,dart,alert,confirm,prompt,package,dvorapa">
-<Meta Name="version" Content="0.4.0+1">
+<Meta Name="version" Content="0.4.0+2">
 <Link Type="text/css" Rel="stylesheet" Href="style.css">
 <Title>Dialog.dart</Title>
 </Head>
@@ -23,10 +23,10 @@ This package replaces default alert and confirm dialogs from Dart's Window class
 Usage is almost the same as set in the Dart's Window class and completely the same as described in the WHATWG HTML Standard. For each dialog there is just one file to import only the dialog you really need. There is also one file to import all three dialogs at once if you want to use them all.
 
 <Code><Pre>
-import "package:dialog/&lt;file&gt;";
+import "package:dialog/~file~";
 </Pre></Code>
 
-<H3>Libraries to import in <Code>&lt;file&gt;</Code>:</H3>
+<H3>Libraries to import in <Code>~file~</Code>:</H3>
 
 <H4>dialogs/alert.dart</H4>
 
@@ -72,17 +72,21 @@ Do you need to use them all at once? Try it by importing dialog.dart file.
 
 <H2>Known Issues</H2>
 
-* **Bootstrap doesn't use the newest version!**
-* **Why don't you use pub's Bootstrap?**
-  * In v3.3.4 is a bug, which displays backdrop in the front. I'm waiting for the fix in the next release.
+<Ul>
+<Li><B>Bootstrap doesn't use the newest version!</B></Li>
+<Li><B>Why don't you use pub's Bootstrap?</B></Li>
+<Ul>
+<Li>In v3.3.4 is a bug, which displays backdrop in the front. I'm waiting for the fix in the next release.</Li>
+</Ul>
+</Ul>
 
 <H2>Contributing</H2>
 
-Please fill in an issue or a pull request on project's [GitHub page](https://github.com/dvorapa/dialog-dart). In PR please observe the style of commit messages using the imperative mood.
+Please fill in an issue or a pull request on project's <a href="https://github.com/dvorapa/dialog-dart">GitHub page</a>. In PR please observe the style of commit messages using the imperative mood.
 
 <H2>License</H2>
 
-[The BSD 2-Clause License](https://github.com/dvorapa/dialog-dart/blob/master/LICENSE)
+<a href="https://github.com/dvorapa/dialog-dart/blob/master/LICENSE">The BSD 2-Clause License</a>
 
 <Script Type="application/dart" Src="index.dart"></Script>
 <Script Src="packages/browser/dart.js"></Script>

@@ -11,10 +11,10 @@ This package replaces default alert and confirm dialogs from Dart's Window class
 Usage is almost the same as set in the Dart's Window class and completely the same as described in the WHATWG HTML Standard. For each dialog there is just one file to import only the dialog you really need. There is also one file to import all three dialogs at once if you want to use them all.
 
 ```Dart
-import "package:dialog/<file>";
+import "package:dialog/~file~";
 ```
 
-### Libraries to import in `<file>`:
+### Libraries to import in `~file~`:
 
 #### dialogs/alert.dart
 
