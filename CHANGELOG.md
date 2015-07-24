@@ -1,3 +1,7 @@
+## 0.4.1
+
+* Fixed enter key bug in prompt
+
 ## 0.4.0
 
 * Resolved bugged order using dart:async
