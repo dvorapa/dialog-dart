@@ -54,6 +54,7 @@ Future<String> prompt([String message = "", String value = ""]) async {
         c.complete(null);
         promptDialog.closeDialog();
       } else if (e is KeyboardEvent && e.keyCode == KeyCode.ENTER) {
+        e.preventDefault();
         c.complete(input.value);
         promptDialog.closeDialog();
       }
