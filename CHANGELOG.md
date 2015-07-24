@@ -1,3 +1,8 @@
+## 0.5.0
+
+* Resolved issues with Bootstrap
+* Fixed removing dialogs when closed
+
 ## 0.4.1
 
 * Fixed enter key bug in prompt

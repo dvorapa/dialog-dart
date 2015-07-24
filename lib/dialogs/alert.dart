@@ -9,13 +9,12 @@ void alert([String message = ""]) {
   alertDialog
     ..showDialog()
     ..okButton.focus()
-    ..modalBackdrop.onClick.first.then((_) => alertDialog.closeDialog())
-    ..xButton.onClick.first.then((_) => alertDialog.closeDialog())
-    ..okButton.onClick.first.then((_) => alertDialog.closeDialog());
+    ..dialogBackdrop.onClick.first.then((_) => alertDialog.closeDialog());
 
-  querySelectorAll("button").forEach((ButtonElement buttons) {
+  querySelectorAll(".modal button").forEach((ButtonElement buttons) {
+    buttons.onClick.first.then((e) => alertDialog.closeDialog());
     buttons.onKeyDown.listen((e) {
-      if (e is KeyboardEvent && e.keyCode == KeyCode.ESC) {
+      if (e.keyCode == KeyCode.ESC) {
         alertDialog.closeDialog();
       }
     });

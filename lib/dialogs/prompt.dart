@@ -9,12 +9,12 @@ Future<String> prompt([String message = "", String value = ""]) async {
 
   LabelElement label = new LabelElement()
     ..classes.add("control-label")
-    ..htmlFor = "TextInputInDialog"
+    ..htmlFor = "dialogInput"
     ..text = message;
   BRElement br = new BRElement();
   InputElement input = new InputElement(type: "text")
     ..classes.add("form-control")
-    ..id = "TextInputInDialog"
+    ..id = "dialogInput"
     ..value = value;
 
   Dialog promptDialog = new Dialog([label, br, input], "Prompt", true);
@@ -22,43 +22,37 @@ Future<String> prompt([String message = "", String value = ""]) async {
   promptDialog.showDialog();
   input.focus();
 
-  promptDialog
-    ..modalBackdrop.onClick.first.then((_) {
-      c.complete(null);
-      promptDialog.closeDialog();
-    })
-    ..xButton.onClick.first.then((_) {
-      c.complete(null);
-      promptDialog.closeDialog();
-    })
-    ..cancelButton.onClick.first.then((_) {
-      c.complete(null);
-      promptDialog.closeDialog();
-    })
-    ..okButton.onClick.first.then((_) {
-      c.complete(input.value);
+  promptDialog.dialogBackdrop.onClick.first.then((_) {
+    c.complete(null);
+    promptDialog.closeDialog();
+  });
+
+  querySelectorAll(".modal button").forEach((ButtonElement buttons) {
+    buttons.onClick.first.then((e) {
+      if (e.target == promptDialog.okButton) {
+        c.complete(input.value);
+      } else {
+        c.complete(null);
+      }
       promptDialog.closeDialog();
     });
-
-  querySelectorAll("button").forEach((ButtonElement buttons) {
     buttons.onKeyDown.listen((e) {
-      if (e is KeyboardEvent && e.keyCode == KeyCode.ESC) {
+      if (e.keyCode == KeyCode.ESC) {
         c.complete(null);
         promptDialog.closeDialog();
       }
     });
   });
-  querySelectorAll("input").forEach((InputElement inputs) {
-    inputs.onKeyDown.listen((e) {
-      if (e is KeyboardEvent && e.keyCode == KeyCode.ESC) {
-        c.complete(null);
-        promptDialog.closeDialog();
-      } else if (e is KeyboardEvent && e.keyCode == KeyCode.ENTER) {
-        e.preventDefault();
-        c.complete(input.value);
-        promptDialog.closeDialog();
-      }
-    });
+
+  input.onKeyDown.listen((e) {
+    if (e.keyCode == KeyCode.ENTER) {
+      e.preventDefault();
+      c.complete(input.value);
+      promptDialog.closeDialog();
+    } else if (e.keyCode == KeyCode.ESC) {
+      c.complete(null);
+      promptDialog.closeDialog();
+    }
   });
 
   return c.future;

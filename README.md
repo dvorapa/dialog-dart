@@ -56,17 +56,11 @@ querySelector("#promptButton").onClick.listen((_) async {
 
 #### dialog.dart
 
-Do you need to use them all at once? Try it by importing dialog.dart file.
-
-## Known Issues
-
-* **Bootstrap doesn't use the newest version!**
-* **Why don't you use pub's Bootstrap?**
-  * In v3.3.4 is a bug, which displays backdrop in the front. I'm waiting for the fix in the next release.
+Do you need to use them all at once? Try to import dialog.dart file only!
 
 ## Contributing
 
-Please fill in an issue or a pull request on project's [GitHub page](https://github.com/dvorapa/dialog-dart). In PR please observe the style of commit messages using the imperative mood.
+Please fill in an issue or a pull request on project's [GitHub page](https://github.com/dvorapa/dialog-dart).
 
 ## License
 

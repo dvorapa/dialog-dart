@@ -1,5 +1,5 @@
 name: dialog
-version: 0.4.1+1
+version: 0.5.0
 description: Modern alert, confirm and prompt dialog implementation
 author: Pavel Dvořák <dvorapa1995@gmail.com>
 homepage: https://github.com/dvorapa/dialog-dart

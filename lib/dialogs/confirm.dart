@@ -11,26 +11,22 @@ Future<bool> confirm([String message = ""]) async {
   confirmDialog
     ..showDialog()
     ..okButton.focus()
-    ..modalBackdrop.onClick.first.then((_) {
+    ..dialogBackdrop.onClick.first.then((_) {
       c.complete(false);
-      confirmDialog.closeDialog();
-    })
-    ..xButton.onClick.first.then((_) {
-      c.complete(false);
-      confirmDialog.closeDialog();
-    })
-    ..cancelButton.onClick.first.then((_) {
-      c.complete(false);
-      confirmDialog.closeDialog();
-    })
-    ..okButton.onClick.first.then((_) {
-      c.complete(true);
       confirmDialog.closeDialog();
     });
 
-  querySelectorAll("button").forEach((ButtonElement buttons) {
+  querySelectorAll(".modal button").forEach((ButtonElement buttons) {
+    buttons.onClick.first.then((e) {
+      if (e.target == confirmDialog.okButton) {
+        c.complete(true);
+      } else {
+        c.complete(false);
+      }
+      confirmDialog.closeDialog();
+    });
     buttons.onKeyDown.listen((e) {
-      if (e is KeyboardEvent && e.keyCode == KeyCode.ESC) {
+      if (e.keyCode == KeyCode.ESC) {
         c.complete(false);
         confirmDialog.closeDialog();
       }

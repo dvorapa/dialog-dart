@@ -1,3 +1,5 @@
+library dialog.src.dialog_class;
+
 import "dart:html";
 
 class Dialog {
@@ -7,7 +9,7 @@ class Dialog {
   String cancelName;
   String okName;
   DivElement dialog = new DivElement();
-  DivElement modalBackdrop = new DivElement();
+  DivElement dialogBackdrop = new DivElement();
   ButtonElement xButton = new ButtonElement();
   ButtonElement cancelButton = new ButtonElement();
   ButtonElement okButton = new ButtonElement();
@@ -15,88 +17,79 @@ class Dialog {
   Dialog(this.content, this.title, [this.cancelable = false,
       this.cancelName = "Cancel", this.okName = "OK"]) {
     if (querySelectorAll(
-        "[href*='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css']").isEmpty) {
+        "[href*='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css']").isEmpty) {
       LinkElement link = new LinkElement()
         ..href =
-        "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+        "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
         ..rel = "stylesheet"
         ..type = "text/css";
       document.querySelector("head").insertAdjacentElement("beforeEnd", link);
     }
 
-    dialog.classes.addAll(["modal", "fade"]);
-    modalBackdrop.classes.addAll(["modal-backdrop", "fade"]);
-    dialog.children.add(modalBackdrop);
-    DivElement modalDialog = new DivElement()
+    dialog
+      ..classes.addAll(["modal", "fade"])
+      ..style.display = "block";
+    dialogBackdrop
+      ..classes.addAll(["modal-backdrop", "fade"])
+      ..style.zIndex = "auto";
+    dialog.children.add(dialogBackdrop);
+    DivElement dialogModal = new DivElement()
       ..classes.addAll(["modal-dialog", "modal-sm"]);
-    dialog.children.add(modalDialog);
-    DivElement modalContent = new DivElement()..classes.add("modal-content");
-    modalDialog.children.add(modalContent);
+    dialog.children.add(dialogModal);
+    DivElement dialogContent = new DivElement()..classes.add("modal-content");
+    dialogModal.children.add(dialogContent);
 
-    DivElement modalHeader = new DivElement()
+    DivElement dialogHeader = new DivElement()
       ..classes.add("modal-header")
       ..style.border = "0";
-
     xButton
       ..classes.add("close")
       ..text = new String.fromCharCode(215);
-    modalHeader.children.add(xButton);
-
-    HeadingElement modalTitle = new HeadingElement.h4()
+    dialogHeader.children.add(xButton);
+    HeadingElement dialogTitle = new HeadingElement.h4()
       ..classes.add("modal-title")
       ..text = title;
-    modalHeader.children.add(modalTitle);
+    dialogHeader.children.add(dialogTitle);
+    dialogContent.children.add(dialogHeader);
 
-    modalContent.children.add(modalHeader);
-
-    DivElement modalBody = new DivElement()
+    DivElement dialogBody = new DivElement()
       ..classes.add("modal-body")
       ..nodes.addAll(content)
       ..style.paddingBottom = "0"
       ..style.paddingTop = "0";
+    dialogContent.children.add(dialogBody);
 
-    modalContent.children.add(modalBody);
-
-    DivElement modalFooter = new DivElement()
+    DivElement dialogFooter = new DivElement()
       ..classes.add("modal-footer")
       ..style.border = "0";
-
     if (cancelable == true) {
       cancelButton
         ..classes.addAll(["btn", "btn-default"])
-        ..tabIndex = 1
         ..text = cancelName;
-      modalFooter.children.add(cancelButton);
+      dialogFooter.children.add(cancelButton);
     }
-
     okButton
       ..classes.addAll(["btn", "btn-primary"])
-      ..tabIndex = 0
       ..text = okName;
-    modalFooter.children.add(okButton);
-
-    modalContent.children.add(modalFooter);
-
-    document.body.children.add(dialog);
+    dialogFooter.children.add(okButton);
+    dialogContent.children.add(dialogFooter);
   }
 
   void showDialog() {
-    if (document.body.classes.contains("opennedDialog") == false) {
-      modalBackdrop
-        ..classes.add("in")
-        ..style.height = "100%";
-      dialog
-        ..classes.add("in")
-        ..style.display = "block";
-      document.body.classes.add("opennedDialog");
+    if (document.body.classes.contains("modal-open") == false) {
+      document.body.children.add(dialog);
+      dialogBackdrop..classes.add("in");
+      dialog..classes.add("in");
+      document.body.classes.add("modal-open");
     }
   }
 
   void closeDialog() {
-    if (document.body.classes.contains("opennedDialog") == true) {
-      modalBackdrop.style.display = "none";
-      dialog.style.display = "none";
-      document.body.classes.remove("opennedDialog");
+    if (document.body.classes.contains("modal-open") == true) {
+      document.body
+        ..children.remove(dialog)
+        ..children.remove(dialogBackdrop)
+        ..classes.remove("modal-open");
     }
   }
 }
