@@ -5,8 +5,8 @@ import "dart:html";
 import "../src/dialog_class.dart";
 
 Future<bool> confirm([String message = ""]) async {
-  Completer c = new Completer();
-  Dialog confirmDialog = new Dialog([new Text(message)], "Confirm", true);
+  Completer c = Completer();
+  Dialog confirmDialog = Dialog([Text(message)], "Confirm", true);
 
   confirmDialog
     ..showDialog()
@@ -16,7 +16,7 @@ Future<bool> confirm([String message = ""]) async {
       confirmDialog.closeDialog();
     });
 
-  querySelectorAll(".modal button").forEach((ButtonElement buttons) {
+  querySelectorAll(".modal button").forEach((Element buttons) {
     buttons.onClick.first.then((e) {
       if (e.target == confirmDialog.okButton) {
         c.complete(true);

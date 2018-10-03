@@ -5,19 +5,19 @@ import "dart:html";
 import "../src/dialog_class.dart";
 
 Future<String> prompt([String message = "", String value = ""]) async {
-  Completer c = new Completer();
+  Completer c = Completer();
 
-  LabelElement label = new LabelElement()
+  LabelElement label = LabelElement()
     ..classes.add("control-label")
     ..htmlFor = "dialogInput"
     ..text = message;
-  BRElement br = new BRElement();
-  InputElement input = new InputElement(type: "text")
+  BRElement br = BRElement();
+  InputElement input = InputElement(type: "text")
     ..classes.add("form-control")
     ..id = "dialogInput"
     ..value = value;
 
-  Dialog promptDialog = new Dialog([label, br, input], "Prompt", true);
+  Dialog promptDialog = Dialog([label, br, input], "Prompt", true);
 
   promptDialog.showDialog();
   input.focus();
@@ -27,7 +27,7 @@ Future<String> prompt([String message = "", String value = ""]) async {
     promptDialog.closeDialog();
   });
 
-  querySelectorAll(".modal button").forEach((ButtonElement buttons) {
+  querySelectorAll(".modal button").forEach((Element buttons) {
     buttons.onClick.first.then((e) {
       if (e.target == promptDialog.okButton) {
         c.complete(input.value);

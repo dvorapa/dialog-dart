@@ -1,3 +1,7 @@
+## 0.6.0
+
+* Dart 2 support
+
 ## 0.5.0
 
 * Resolved issues with Bootstrap

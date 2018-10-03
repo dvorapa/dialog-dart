@@ -8,19 +8,22 @@ class Dialog {
   bool cancelable;
   String cancelName;
   String okName;
-  DivElement dialog = new DivElement();
-  DivElement dialogBackdrop = new DivElement();
-  ButtonElement xButton = new ButtonElement();
-  ButtonElement cancelButton = new ButtonElement();
-  ButtonElement okButton = new ButtonElement();
+  DivElement dialog = DivElement();
+  DivElement dialogBackdrop = DivElement();
+  ButtonElement xButton = ButtonElement();
+  ButtonElement cancelButton = ButtonElement();
+  ButtonElement okButton = ButtonElement();
 
-  Dialog(this.content, this.title, [this.cancelable = false,
-      this.cancelName = "Cancel", this.okName = "OK"]) {
+  Dialog(this.content, this.title,
+      [this.cancelable = false,
+      this.cancelName = "Cancel",
+      this.okName = "OK"]) {
     if (querySelectorAll(
-        "[href*='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css']").isEmpty) {
-      LinkElement link = new LinkElement()
+            "[href*='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css']")
+        .isEmpty) {
+      LinkElement link = LinkElement()
         ..href =
-        "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+            "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
         ..rel = "stylesheet"
         ..type = "text/css";
       document.querySelector("head").insertAdjacentElement("beforeEnd", link);
@@ -33,33 +36,33 @@ class Dialog {
       ..classes.addAll(["modal-backdrop", "fade"])
       ..style.zIndex = "auto";
     dialog.children.add(dialogBackdrop);
-    DivElement dialogModal = new DivElement()
+    DivElement dialogModal = DivElement()
       ..classes.addAll(["modal-dialog", "modal-sm"]);
     dialog.children.add(dialogModal);
-    DivElement dialogContent = new DivElement()..classes.add("modal-content");
+    DivElement dialogContent = DivElement()..classes.add("modal-content");
     dialogModal.children.add(dialogContent);
 
-    DivElement dialogHeader = new DivElement()
+    DivElement dialogHeader = DivElement()
       ..classes.add("modal-header")
       ..style.border = "0";
     xButton
       ..classes.add("close")
-      ..text = new String.fromCharCode(215);
+      ..text = String.fromCharCode(215);
     dialogHeader.children.add(xButton);
-    HeadingElement dialogTitle = new HeadingElement.h4()
+    HeadingElement dialogTitle = HeadingElement.h4()
       ..classes.add("modal-title")
       ..text = title;
     dialogHeader.children.add(dialogTitle);
     dialogContent.children.add(dialogHeader);
 
-    DivElement dialogBody = new DivElement()
+    DivElement dialogBody = DivElement()
       ..classes.add("modal-body")
       ..nodes.addAll(content)
       ..style.paddingBottom = "0"
       ..style.paddingTop = "0";
     dialogContent.children.add(dialogBody);
 
-    DivElement dialogFooter = new DivElement()
+    DivElement dialogFooter = DivElement()
       ..classes.add("modal-footer")
       ..style.border = "0";
     if (cancelable == true) {
