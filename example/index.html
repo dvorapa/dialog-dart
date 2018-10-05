@@ -2,22 +2,10 @@
 <Html Lang="en">
 <Head>
 <Meta Charset="utf-8">
-<Meta Name="author" Content="Pavel Dvořák">
-<Meta Name="description" Content="Modern modal dialog implementation containing remakes of alert & confirm dialogs supplemented by prompt & custom modal dialogs">
-<Meta Name="keywords" Content="dialog,dart,alert,confirm,prompt,modal,package,dvorapa">
-<Meta Name="version" Content="0.7.0">
-<Title>Dialog.dart</Title>
+<Title>Examples</Title>
 </Head>
 <Body>
-<H1>Dialog.dart</H1>
-
-Modern modal dialog implementation containing remakes of alert & confirm dialogs supplemented by prompt & custom modal dialogs
-
-<H2>Description</H2>
-
-This package replaces default alert & confirm dialogs from Dart's Window class and adds missing prompt & custom modal dialogs. Default system dialogs called by that prompts are superseded by modern modal design.
-
-<H2>Usage</H2>
+<H1>Examples</H1>
 
 Usage is almost the same as set in the Dart's Window class and completely the same as described in the WHATWG HTML Standard. For each dialog there is just one file to import only the dialog you really need. There is also one file to import all four dialogs at once if you want to use them all.
 
@@ -25,9 +13,7 @@ Usage is almost the same as set in the Dart's Window class and completely the sa
 import "package:dialog/~file~";
 </Pre></Code>
 
-<H3>Libraries to import in <Code>~file~</Code>:</H3>
-
-<H4>dialogs/alert.dart</H4>
+<H2>dialogs/alert.dart</H2>
 
 Replaces default alert dialog.
 
@@ -39,7 +25,7 @@ querySelector("#alertButton").onClick.listen((_) {
 
 <Button Id="alertButton">Alert me!</Button>
 
-<H4>dialogs/confirm.dart</H4>
+<H2>dialogs/confirm.dart</H2>
 
 Replaces default confirm dialog.
 
@@ -52,7 +38,7 @@ querySelector("#confirmButton").onClick.listen((_) async {
 
 <Button Id="confirmButton">Confirm me!</Button>
 
-<H4>dialogs/prompt.dart</H4>
+<H2>dialogs/prompt.dart</H2>
 
 Adds missing prompt dialog.
 
@@ -65,7 +51,7 @@ querySelector("#promptButton").onClick.listen((_) async {
 
 <Button Id="promptButton">Prompt me!</Button>
 
-<H4>dialogs/modal.dart</H4>
+<H2>dialogs/modal.dart</H2>
 
 Adds fully customizable modal dialog.
 
@@ -79,17 +65,9 @@ querySelector("#modalButton").onClick.listen((_) async {
 
 <Button Id="modalButton">Surprise me!</Button>
 
-<H4>dialog.dart</H4>
+<H2>dialog.dart</H2>
 
 Do you need to use them all at once? Try to import dialog.dart file only!
-
-<H2>Contributing</H2>
-
-Please fill in an issue or a pull request on project's <a href="https://github.com/dvorapa/dialog-dart">GitHub page</a>.
-
-<H2>License</H2>
-
-<a href="https://github.com/dvorapa/dialog-dart/blob/master/LICENSE">The BSD 2-Clause License</a>
 
 <Script Defer Src="index.dart.js"></Script>
 </Body>
