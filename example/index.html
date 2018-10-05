@@ -9,19 +9,19 @@
 
 Usage is almost the same as set in the Dart's Window class and completely the same as described in the WHATWG HTML Standard. For each dialog there is just one file to import only the dialog you really need. There is also one file to import all four dialogs at once if you want to use them all.
 
-<Code><Pre>
+<Pre>
 import "package:dialog/~file~";
-</Pre></Code>
+</Pre>
 
 <H2>dialogs/alert.dart</H2>
 
 Replaces default alert dialog.
 
-<Code><Pre>
+<Pre>
 querySelector("#alertButton").onClick.listen((_) {
   alert("Alerted?!");
 });
-</Pre></Code>
+</Pre>
 
 <Button Id="alertButton">Alert me!</Button>
 
@@ -29,12 +29,12 @@ querySelector("#alertButton").onClick.listen((_) {
 
 Replaces default confirm dialog.
 
-<Code><Pre>
+<Pre>
 querySelector("#confirmButton").onClick.listen((_) async {
   var myConfirm = await confirm("Confirmed?!");
   alert(myConfirm.toString());
 });
-</Pre></Code>
+</Pre>
 
 <Button Id="confirmButton">Confirm me!</Button>
 
@@ -42,12 +42,12 @@ querySelector("#confirmButton").onClick.listen((_) async {
 
 Adds missing prompt dialog.
 
-<Code><Pre>
+<Pre>
 querySelector("#promptButton").onClick.listen((_) async {
   var myPrompt = await prompt("Prompted?!", "Yes!");
   alert(myPrompt.toString());
 });
-</Pre></Code>
+</Pre>
 
 <Button Id="promptButton">Prompt me!</Button>
 
@@ -55,13 +55,13 @@ querySelector("#promptButton").onClick.listen((_) async {
 
 Adds fully customizable modal dialog.
 
-<Code><Pre>
+<Pre>
 querySelector("#modalButton").onClick.listen((_) async {
   var myModal = await modal(
       "Surprise", [Text("Boo!")], "Eek!", "Huh?", "Haha!", "Come on!", true);
   alert(myModal.toString());
 });
-</Pre></Code>
+</Pre>
 
 <Button Id="modalButton">Surprise me!</Button>
 

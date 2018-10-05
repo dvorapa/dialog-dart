@@ -7,8 +7,6 @@ class Dialog {
   List<Node> content;
   String successText;
   String cancelText;
-  dynamic onSuccess;
-  dynamic onCancel;
   bool cancellable;
   final DivElement dialog = DivElement();
   final DivElement dialogBackdrop = DivElement();
@@ -19,10 +17,8 @@ class Dialog {
   Dialog(this.title, this.content,
       [this.cancellable = false,
       this.successText = "OK",
-      this.cancelText = "Cancel",
-      this.onSuccess = true,
-      this.onCancel = false]) {
-    if (document.querySelector("body").style.color != 'rgb(51, 51, 51)' &&
+      this.cancelText = "Cancel"]) {
+    if (document.querySelector("body").style.color != "rgb(51, 51, 51)" &&
         querySelectorAll("[href*='packages/dialog/bootstrap.css']").isEmpty) {
       LinkElement link = LinkElement()
         ..href = "packages/dialog/bootstrap.css"

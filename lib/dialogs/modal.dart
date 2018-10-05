@@ -15,8 +15,8 @@ Future<dynamic> modal(
     Element whatToFocus]) async {
   Completer c = Completer();
 
-  Dialog modalDialog = Dialog(title, content, cancellable, successText,
-      cancelText, onSuccess, onCancel);
+  Dialog modalDialog =
+      Dialog(title, content, cancellable, successText, cancelText);
 
   whatToFocus ??= modalDialog.okButton;
 
