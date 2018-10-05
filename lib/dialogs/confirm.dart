@@ -4,7 +4,7 @@ import "dart:async";
 import "dart:html";
 import "../src/dialog_class.dart";
 
-Future<bool> confirm([String message = ""]) async {
+Future<dynamic> confirm([String message = ""]) async {
   Completer c = Completer();
   Dialog confirmDialog = Dialog([Text(message)], "Confirm", true);
 

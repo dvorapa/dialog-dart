@@ -4,7 +4,7 @@ import "dart:async";
 import "dart:html";
 import "../src/dialog_class.dart";
 
-Future<String> prompt([String message = "", String value = ""]) async {
+Future<dynamic> prompt([String message = "", String value = ""]) async {
   Completer c = Completer();
 
   LabelElement label = LabelElement()
