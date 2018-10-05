@@ -18,12 +18,10 @@ class Dialog {
       [this.cancelable = false,
       this.cancelName = "Cancel",
       this.okName = "OK"]) {
-    if (querySelectorAll(
-            "[href*='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css']")
-        .isEmpty) {
+    if (document.querySelector("body").style.color != 'rgb(51, 51, 51)' &&
+        querySelectorAll("[href*='packages/dialog/bootstrap.css']").isEmpty) {
       LinkElement link = LinkElement()
-        ..href =
-            "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+        ..href = "packages/dialog/bootstrap.css"
         ..rel = "stylesheet"
         ..type = "text/css";
       document.querySelector("head").insertAdjacentElement("beforeEnd", link);
