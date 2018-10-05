@@ -16,7 +16,7 @@ Future<dynamic> prompt([String message = "", String value = ""]) async {
     ..id = "dialogInput"
     ..value = value;
 
-  Dialog promptDialog = Dialog([label, input], "Prompt", true);
+  Dialog promptDialog = Dialog("Prompt", [label, input], true);
 
   promptDialog.showDialog();
   input.focus();

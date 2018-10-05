@@ -3,21 +3,25 @@ library dialog.src.dialog_class;
 import "dart:html";
 
 class Dialog {
-  List<Node> content;
   String title;
-  bool cancelable;
-  String cancelName;
-  String okName;
-  DivElement dialog = DivElement();
-  DivElement dialogBackdrop = DivElement();
-  ButtonElement xButton = ButtonElement();
-  ButtonElement cancelButton = ButtonElement();
-  ButtonElement okButton = ButtonElement();
+  List<Node> content;
+  String successText;
+  String cancelText;
+  dynamic onSuccess;
+  dynamic onCancel;
+  bool cancellable;
+  final DivElement dialog = DivElement();
+  final DivElement dialogBackdrop = DivElement();
+  final ButtonElement xButton = ButtonElement();
+  final ButtonElement cancelButton = ButtonElement();
+  final ButtonElement okButton = ButtonElement();
 
-  Dialog(this.content, this.title,
-      [this.cancelable = false,
-      this.cancelName = "Cancel",
-      this.okName = "OK"]) {
+  Dialog(this.title, this.content,
+      [this.cancellable = false,
+      this.successText = "OK",
+      this.cancelText = "Cancel",
+      this.onSuccess = true,
+      this.onCancel = false]) {
     if (document.querySelector("body").style.color != 'rgb(51, 51, 51)' &&
         querySelectorAll("[href*='packages/dialog/bootstrap.css']").isEmpty) {
       LinkElement link = LinkElement()
@@ -63,15 +67,15 @@ class Dialog {
     DivElement dialogFooter = DivElement()
       ..classes.add("modal-footer")
       ..style.border = "0";
-    if (cancelable == true) {
+    if (cancellable == true) {
       cancelButton
         ..classes.addAll(["btn", "btn-secondary"])
-        ..text = cancelName;
+        ..text = cancelText;
       dialogFooter.children.add(cancelButton);
     }
     okButton
       ..classes.addAll(["btn", "btn-primary"])
-      ..text = okName;
+      ..text = successText;
     dialogFooter.children.add(okButton);
     dialogContent.children.add(dialogFooter);
   }
@@ -79,8 +83,8 @@ class Dialog {
   void showDialog() {
     if (document.body.classes.contains("modal-open") == false) {
       document.body.children.add(dialog);
-      dialogBackdrop..classes.add("show");
-      dialog..classes.add("show");
+      dialogBackdrop.classes.add("show");
+      dialog.classes.add("show");
       document.body.classes.add("modal-open");
     }
   }

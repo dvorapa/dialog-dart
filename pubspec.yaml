@@ -1,9 +1,8 @@
 name: dialog
-version: 0.6.2
-description: Modern alert, confirm and prompt dialog implementation
+version: 0.7.0
+description: Modern modal dialog implementation containing remakes of alert & confirm dialogs supplemented by prompt & custom modal dialogs
 author: Pavel Dvořák <dvorapa1995@gmail.com>
 homepage: https://github.com/dvorapa/dialog-dart
-documentation:
 environment:
   sdk: ">=2.0.0 <3.0.0"
 dev_dependencies:

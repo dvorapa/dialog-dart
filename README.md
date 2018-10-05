@@ -1,14 +1,14 @@
 # Dialog.dart
 
-Modern alert, confirm and prompt dialog implementation
+Modern modal dialog implementation containing remakes of alert & confirm dialogs supplemented by prompt & custom modal dialogs
 
 ## Description
 
-This package replaces default alert and confirm dialogs from Dart's Window class and adds missing prompt dialog. Default system dialogs called by that prompts are superseded by modern modal design.
+This package replaces default alert & confirm dialogs from Dart's Window class and adds missing prompt & custom modal dialogs. Default system dialogs called by that prompts are superseded by modern modal design.
 
 ## Usage
 
-Usage is almost the same as set in the Dart's Window class and completely the same as described in the WHATWG HTML Standard. For each dialog there is just one file to import only the dialog you really need. There is also one file to import all three dialogs at once if you want to use them all.
+Usage is almost the same as set in the Dart's Window class and completely the same as described in the WHATWG HTML Standard. For each dialog there is just one file to import only the dialog you really need. There is also one file to import all four dialogs at once if you want to use them all.
 
 ```Dart
 import "package:dialog/~file~";
@@ -53,6 +53,20 @@ querySelector("#promptButton").onClick.listen((_) async {
 ```
 
 ![Image of prompt](https://raw.githubusercontent.com/dvorapa/dialog-dart/master/prompt.png)
+
+#### dialogs/modal.dart
+
+Adds fully customizable modal dialog.
+
+```Dart
+querySelector("#modalButton").onClick.listen((_) async {
+  var myModal = await modal(
+      "Surprise", [Text("Boo!")], "Eek!", "Huh?", "Haha!", "Come on!", true);
+  alert(myModal.toString());
+});
+```
+
+![Image of modal](https://raw.githubusercontent.com/dvorapa/dialog-dart/master/modal.png)
 
 #### dialog.dart
 

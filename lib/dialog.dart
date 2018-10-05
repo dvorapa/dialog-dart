@@ -7,7 +7,12 @@ library dialog;
 
 /// Replaces default alert dialog.
 export "dialogs/alert.dart";
+
 /// Replaces default confirm dialog.
 export "dialogs/confirm.dart";
+
+/// Adds fully customizable modal dialog.
+export "dialogs/modal.dart";
+
 /// Adds missing prompt dialog.
 export "dialogs/prompt.dart";

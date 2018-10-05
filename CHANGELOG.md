@@ -1,3 +1,7 @@
+## 0.7.0
+
+* **New** modal dialog
+
 ## 0.6.2
 
 * Bootstrap 4 support

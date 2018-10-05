@@ -3,23 +3,23 @@
 <Head>
 <Meta Charset="utf-8">
 <Meta Name="author" Content="Pavel Dvořák">
-<Meta Name="description" Content="Modern alert, confirm and prompt dialog implementation">
-<Meta Name="keywords" Content="dialog,dart,alert,confirm,prompt,package,dvorapa">
-<Meta Name="version" Content="0.6.2">
+<Meta Name="description" Content="Modern modal dialog implementation containing remakes of alert & confirm dialogs supplemented by prompt & custom modal dialogs">
+<Meta Name="keywords" Content="dialog,dart,alert,confirm,prompt,modal,package,dvorapa">
+<Meta Name="version" Content="0.7.0">
 <Title>Dialog.dart</Title>
 </Head>
 <Body>
 <H1>Dialog.dart</H1>
 
-Modern alert, confirm and prompt dialog implementation
+Modern modal dialog implementation containing remakes of alert & confirm dialogs supplemented by prompt & custom modal dialogs
 
 <H2>Description</H2>
 
-This package replaces default alert and confirm dialogs from Dart's Window class and adds missing prompt dialog. Default system dialogs called by that prompts are superseded by modern modal design.
+This package replaces default alert & confirm dialogs from Dart's Window class and adds missing prompt & custom modal dialogs. Default system dialogs called by that prompts are superseded by modern modal design.
 
 <H2>Usage</H2>
 
-Usage is almost the same as set in the Dart's Window class and completely the same as described in the WHATWG HTML Standard. For each dialog there is just one file to import only the dialog you really need. There is also one file to import all three dialogs at once if you want to use them all.
+Usage is almost the same as set in the Dart's Window class and completely the same as described in the WHATWG HTML Standard. For each dialog there is just one file to import only the dialog you really need. There is also one file to import all four dialogs at once if you want to use them all.
 
 <Code><Pre>
 import "package:dialog/~file~";
@@ -64,6 +64,20 @@ querySelector("#promptButton").onClick.listen((_) async {
 </Pre></Code>
 
 <Button Id="promptButton">Prompt me!</Button>
+
+<H4>dialogs/modal.dart</H4>
+
+Adds fully customizable modal dialog.
+
+<Code><Pre>
+querySelector("#modalButton").onClick.listen((_) async {
+  var myModal = await modal(
+      "Surprise", [Text("Boo!")], "Eek!", "Huh?", "Haha!", "Come on!", true);
+  alert(myModal.toString());
+});
+</Pre></Code>
+
+<Button Id="modalButton">Surprise me!</Button>
 
 <H4>dialog.dart</H4>
 

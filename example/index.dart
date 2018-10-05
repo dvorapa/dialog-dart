@@ -13,4 +13,9 @@ main() {
     var myPrompt = await prompt("Prompted?!", "Yes!");
     alert(myPrompt.toString());
   });
+  querySelector("#modalButton").onClick.listen((_) async {
+    var myModal = await modal(
+        "Surprise", [Text("Boo!")], "Eek!", "Huh?", "Haha!", "Come on!", true);
+    alert(myModal.toString());
+  });
 }

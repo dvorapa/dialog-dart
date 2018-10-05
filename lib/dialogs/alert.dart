@@ -4,7 +4,7 @@ import "dart:html";
 import "../src/dialog_class.dart";
 
 void alert([String message = ""]) {
-  Dialog alertDialog = Dialog([Text(message)], "Alert");
+  Dialog alertDialog = Dialog("Alert", [Text(message)]);
 
   alertDialog
     ..showDialog()
