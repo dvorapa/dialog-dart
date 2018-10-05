@@ -11,13 +11,12 @@ Future<String> prompt([String message = "", String value = ""]) async {
     ..classes.add("control-label")
     ..htmlFor = "dialogInput"
     ..text = message;
-  BRElement br = BRElement();
   InputElement input = InputElement(type: "text")
     ..classes.add("form-control")
     ..id = "dialogInput"
     ..value = value;
 
-  Dialog promptDialog = Dialog([label, br, input], "Prompt", true);
+  Dialog promptDialog = Dialog([label, input], "Prompt", true);
 
   promptDialog.showDialog();
   input.focus();

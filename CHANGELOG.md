@@ -1,3 +1,11 @@
+## 0.6.2
+
+* Bootstrap 4 support
+
+## 0.6.1
+
+* Apply Bootstrap css only to dialogs
+
 ## 0.6.0
 
 * Dart 2 support

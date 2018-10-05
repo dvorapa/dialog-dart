@@ -43,14 +43,14 @@ class Dialog {
     DivElement dialogHeader = DivElement()
       ..classes.add("modal-header")
       ..style.border = "0";
+    HeadingElement dialogTitle = HeadingElement.h5()
+      ..classes.add("modal-title")
+      ..text = title;
+    dialogHeader.children.add(dialogTitle);
     xButton
       ..classes.add("close")
       ..text = String.fromCharCode(215);
     dialogHeader.children.add(xButton);
-    HeadingElement dialogTitle = HeadingElement.h4()
-      ..classes.add("modal-title")
-      ..text = title;
-    dialogHeader.children.add(dialogTitle);
     dialogContent.children.add(dialogHeader);
 
     DivElement dialogBody = DivElement()
@@ -65,7 +65,7 @@ class Dialog {
       ..style.border = "0";
     if (cancelable == true) {
       cancelButton
-        ..classes.addAll(["btn", "btn-default"])
+        ..classes.addAll(["btn", "btn-secondary"])
         ..text = cancelName;
       dialogFooter.children.add(cancelButton);
     }
@@ -79,8 +79,8 @@ class Dialog {
   void showDialog() {
     if (document.body.classes.contains("modal-open") == false) {
       document.body.children.add(dialog);
-      dialogBackdrop..classes.add("in");
-      dialog..classes.add("in");
+      dialogBackdrop..classes.add("show");
+      dialog..classes.add("show");
       document.body.classes.add("modal-open");
     }
   }
