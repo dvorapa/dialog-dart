@@ -76,6 +76,8 @@ Do you need to use them all at once? Try to import dialog.dart file only!
 
 Please fill in an issue or a pull request on project's [GitHub page](https://github.com/dvorapa/dialog-dart).
 
+You might want to buy me a [beer 🍺](https://paypal.me/dvorapa) or a [coffee ☕](https://paypal.me/dvorapa).
+
 ## License
 
 [The BSD 2-Clause License](https://github.com/dvorapa/dialog-dart/blob/master/LICENSE)
