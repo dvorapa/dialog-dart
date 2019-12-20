@@ -1,6 +1,8 @@
+## 0.7.2
+* Minor Bootstrap fix
+
 ## 0.7.1
 * Fixed Bootstrap issues
-* Fixed unawaited Futures
 
 ## 0.7.0
 

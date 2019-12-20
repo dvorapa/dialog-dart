@@ -31,7 +31,7 @@ Future<dynamic> modal(
     }
   }
 
-  await modalDialog.dialogBackdrop.onClick.first.then((_) {
+  modalDialog.dialogBackdrop.onClick.first.then((_) {
     whatToReturn(false);
     modalDialog.closeDialog();
   });

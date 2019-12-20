@@ -10,11 +10,11 @@ Future<dynamic> confirm([String message = ""]) async {
 
   confirmDialog
     ..showDialog()
-    ..okButton.focus();
-  await confirmDialog.dialogBackdrop.onClick.first.then((_) {
-    c.complete(false);
-    confirmDialog.closeDialog();
-  });
+    ..okButton.focus()
+    ..dialogBackdrop.onClick.first.then((_) {
+      c.complete(false);
+      confirmDialog.closeDialog();
+    });
 
   querySelectorAll(".modal button").forEach((Element buttons) {
     buttons.onClick.first.then((e) {

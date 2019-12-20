@@ -39,7 +39,6 @@ linter:
     - recursive_getters
     - slash_for_doc_comments
     - type_init_formals
-    - unawaited_futures
     - unnecessary_const
     - unnecessary_new
     - unnecessary_null_in_if_null_operators
