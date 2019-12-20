@@ -23,7 +23,7 @@ Future<dynamic> modal(
   modalDialog.showDialog();
   whatToFocus.focus();
 
-  whatToReturn(bool howClosed) {
+  void whatToReturn(bool howClosed) {
     if (howClosed == true) {
       c.complete(onSuccess);
     } else if (howClosed == false) {
@@ -31,7 +31,7 @@ Future<dynamic> modal(
     }
   }
 
-  modalDialog.dialogBackdrop.onClick.first.then((_) {
+  await modalDialog.dialogBackdrop.onClick.first.then((_) {
     whatToReturn(false);
     modalDialog.closeDialog();
   });

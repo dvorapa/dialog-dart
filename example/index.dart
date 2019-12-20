@@ -1,7 +1,7 @@
 import "dart:html";
 import "package:dialog/dialog.dart";
 
-main() {
+void main() {
   querySelector("#alertButton").onClick.listen((_) {
     alert("Alerted?!");
   });

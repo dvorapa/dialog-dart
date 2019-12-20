@@ -21,7 +21,7 @@ Future<dynamic> prompt([String message = "", String value = ""]) async {
   promptDialog.showDialog();
   input.focus();
 
-  promptDialog.dialogBackdrop.onClick.first.then((_) {
+  await promptDialog.dialogBackdrop.onClick.first.then((_) {
     c.complete(null);
     promptDialog.closeDialog();
   });

@@ -1,10 +1,12 @@
 name: dialog
-version: 0.7.0+2
 description: Modern modal dialog implementation containing remakes of alert & confirm dialogs supplemented by prompt & custom modal dialogs
-author: Pavel Dvořák <dvorapa1995@gmail.com>
+version: 0.7.1
 homepage: https://github.com/dvorapa/dialog-dart
+author: Pavel Dvořák <dvorapa1995@gmail.com>
+
 environment:
-  sdk: ">=2.0.0 <3.0.0"
+  sdk: ^2.0.0
+
 dev_dependencies:
-  build_runner: ^0.10.0
-  build_web_compilers: ^0.4.0
+  build_runner: ^1.6.2
+  build_web_compilers: ^2.0.0
