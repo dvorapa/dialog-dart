@@ -1,3 +1,7 @@
+## 0.7.1
+* Fixed Bootstrap issues
+* Fixed unawaited Futures
+
 ## 0.7.0
 
 * **New** modal dialog
