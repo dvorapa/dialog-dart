@@ -2,7 +2,7 @@ library dialog.prompt;
 
 import "dart:async";
 import "dart:html";
-import "../src/dialog_class.dart";
+import "../src/dialog_base.dart";
 
 Future<dynamic> prompt([String message = "", String value = ""]) async {
   Completer c = Completer();

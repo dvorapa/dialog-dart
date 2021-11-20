@@ -1,7 +1,7 @@
 library dialog.alert;
 
 import "dart:html";
-import "../src/dialog_class.dart";
+import "../src/dialog_base.dart";
 
 void alert([String message = ""]) {
   Dialog alertDialog = Dialog("Alert", [Text(message)]);

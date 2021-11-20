@@ -2,17 +2,17 @@ library dialog.modal;
 
 import "dart:async";
 import "dart:html";
-import "../src/dialog_class.dart";
+import "../src/dialog_base.dart";
 
 Future<dynamic> modal(
     [String title = "Modal",
     List<Node> content = const [],
-    String successText,
-    String cancelText,
+    String? successText,
+    String? cancelText,
     dynamic onSuccess,
     dynamic onCancel,
-    bool cancellable,
-    Element whatToFocus]) async {
+    bool? cancellable,
+    Element? whatToFocus]) async {
   Completer c = Completer();
 
   Dialog modalDialog =

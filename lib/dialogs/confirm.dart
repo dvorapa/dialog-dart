@@ -2,7 +2,7 @@ library dialog.confirm;
 
 import "dart:async";
 import "dart:html";
-import "../src/dialog_class.dart";
+import "../src/dialog_base.dart";
 
 Future<dynamic> confirm([String message = ""]) async {
   Completer c = Completer();

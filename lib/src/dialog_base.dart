@@ -1,13 +1,13 @@
-library dialog.src.dialog_class;
+library dialog.src.dialog_base;
 
 import "dart:html";
 
 class Dialog {
   String title;
   List<Node> content;
-  String successText;
-  String cancelText;
-  bool cancellable;
+  String? successText;
+  String? cancelText;
+  bool? cancellable;
   final DivElement dialog = DivElement();
   final DivElement dialogBackdrop = DivElement();
   final ButtonElement xButton = ButtonElement();
@@ -18,13 +18,13 @@ class Dialog {
       [this.cancellable = false,
       this.successText = "OK",
       this.cancelText = "Cancel"]) {
-    if (document.querySelector("body").style.color != "rgb(51, 51, 51)" &&
+    if (document.querySelector("body")!.style.color != "rgb(51, 51, 51)" &&
         querySelectorAll("[href*='packages/dialog/bootstrap.css']").isEmpty) {
       LinkElement link = LinkElement()
         ..href = "packages/dialog/bootstrap.css"
         ..rel = "stylesheet"
         ..type = "text/css";
-      document.querySelector("head").insertAdjacentElement("beforeEnd", link);
+      document.querySelector("head")!.insertAdjacentElement("beforeEnd", link);
     }
 
     dialog
@@ -77,17 +77,17 @@ class Dialog {
   }
 
   void showDialog() {
-    if (document.body.classes.contains("modal-open") == false) {
-      document.body.children.add(dialog);
+    if (document.body!.classes.contains("modal-open") == false) {
+      document.body!.children.add(dialog);
       dialogBackdrop.classes.add("show");
       dialog.classes.add("show");
-      document.body.classes.add("modal-open");
+      document.body!.classes.add("modal-open");
     }
   }
 
   void closeDialog() {
-    if (document.body.classes.contains("modal-open") == true) {
-      document.body
+    if (document.body!.classes.contains("modal-open") == true) {
+      document.body!
         ..children.remove(dialog)
         ..children.remove(dialogBackdrop)
         ..classes.remove("modal-open");
