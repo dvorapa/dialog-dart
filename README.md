@@ -88,4 +88,4 @@ Please fill in an issue or a pull request on project's [GitHub page](https://git
 
 ## License
 
-[The BSD 2-Clause License](https://github.com/dvorapa/dialog-dart/blob/master/LICENSE)
+[BSD 2-Clause "Simplified"](https://github.com/dvorapa/dialog-dart/blob/master/LICENSE)
