@@ -80,7 +80,8 @@ Do you need to use them all at once? Try to import dialog.dart file only!
 
 [Pavel Dvořák](https://github.com/dvorapa) ([@dvorapa](https://twitter.com/dvorapa))
 
-You might want to buy me a [hot chocolate ☕](https://paypal.me/dvorapa).
+You might want to buy me a hot chocolate ☕ using [Paypal](
+https://paypal.me/dvorapa) or [Revolut](https://revolut.me/dvorapa).
 
 ## Contributing
 
